@@ -1,0 +1,21 @@
+ShowMAC Cordova Plugin
+======================
+Since access to the UUID is deprecated under iOS there is the need to have a Unique identifier per
+device, one way is to use the MAC adress of the first interface.
+
+Usage
+-----
+
+  * Copy the ShowMAC.m and ShowMAC.h into your Xcode Project, probably the best place would be Plugins
+  * Copy the JS file in your www directory and include it in your html to use it
+  * call from JS (with jQuery) via 
+  
+<pre>
+  $(document).bind('deviceready', function(){
+    window.plugins.showmac.get( 
+      function(m){
+        console.log("Device MAC Address is" + mac);
+      }
+   );    
+ });
+</pre>
